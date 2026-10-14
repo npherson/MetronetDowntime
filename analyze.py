@@ -18,6 +18,8 @@ GATEWAY_MONITOR = "Default Gateway"
 # If the gateway was down from 3 minutes before an internet outage until 3 minutes
 # after it, the outage is treated as a home network problem and left out.
 GW_MARGIN = timedelta(minutes=3)
+# Monitoring began the afternoon of Jul 31, 2026; the report starts on the first full month.
+REPORT_START = datetime(2026, 8, 1, 5, tzinfo=timezone.utc)  # Aug 1, midnight Central
 
 con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
 
@@ -94,7 +96,8 @@ def local(t):
 inet_id = monitor_id(INTERNET_MONITOR)
 inet = outages(inet_id)
 gw = outages(monitor_id(GATEWAY_MONITOR))
-first_beat = utc(con.execute("select min(time) from heartbeat where monitor_id=?", (inet_id,)).fetchone()[0])
+first_beat = max(REPORT_START, utc(con.execute(
+    "select min(time) from heartbeat where monitor_id=?", (inet_id,)).fetchone()[0]))
 last_beat = utc(con.execute("select max(time) from heartbeat where monitor_id=?", (inet_id,)).fetchone()[0])
 gw_iv = [(g["start"], g["end"] or last_beat) for g in gw]
 
@@ -115,7 +118,7 @@ for i, o in enumerate(inet, 1):
         "error": summarize(o["msg"]),
     }
     all_rows.append(row)
-    if e and not gw_near:
+    if e and not gw_near and s >= first_beat:
         isp.append({**row, "n": len(isp) + 1, "secs": secs, "start": s})
 
 with open("data/all-outages.csv", "w", newline="", encoding="utf-8") as f:
@@ -188,7 +191,7 @@ longest = max(isp, key=lambda r: r["secs"])
 report = {
     "first": central(first_beat).strftime("%b %-d, %Y" if sys.platform != "win32" else "%b %#d, %Y"),
     "last": central(last_beat).strftime("%b %-d, %Y at %-I:%M %p" if sys.platform != "win32" else "%b %#d, %Y at %#I:%M %p"),
-    "excluded": len(all_rows) - len(isp),
+    "excluded": sum(o["start"] >= first_beat and o["end"] is not None for o in inet) - len(isp),
     "longest": {"start": longest["start_local"], "duration": longest["duration"]},
     "summary": summary,
     "days": days,
