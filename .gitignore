@@ -1,0 +1,5 @@
+# Local copy of the Uptime Kuma database (contains login secrets) and local-only outputs
+data/
+# Pi address and SSH username
+local.config.json
+__pycache__/

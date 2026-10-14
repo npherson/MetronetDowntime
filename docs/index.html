@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metronet Downtime Report</title>
+<meta name="description" content="How often our home internet connection has gone down, measured once a minute.">
+<style>
+:root{color-scheme:light;--surface:#fcfcfb;--panel:#ffffff;--ink:#0b0b0b;--ink2:#52514e;--muted:#8a8984;--grid:#e6e5e0;--line:#dddcd6;--long:#2a78d6;--short:#eb6834}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--surface:#141413;--panel:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#8f8e88;--grid:#2e2e2b;--line:#33332f;--long:#3987e5;--short:#d95926}}
+:root[data-theme="dark"]{color-scheme:dark;--surface:#141413;--panel:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#8f8e88;--grid:#2e2e2b;--line:#33332f;--long:#3987e5;--short:#d95926}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:820px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px}
+h2{font-size:18px;margin:32px 0 8px}
+p{margin:0 0 12px;color:var(--ink2)}
+.lede{font-size:16px;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 8px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font-size:24px;font-variant-numeric:tabular-nums}
+.stat span{color:var(--ink2);font-size:13px}
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 12px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+thead th{color:var(--ink2);font-weight:600}
+tr.total th,tr.total td{font-weight:700;border-bottom:0}
+.kv{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;position:relative;font-size:13px;line-height:1.4}
+.kv h3{font-size:15px;margin:0 0 2px}.kv p{margin:0 0 8px;font-size:13px}
+.kv .lg{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 6px;color:var(--ink2)}.kv .lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.kv svg{width:100%;height:auto;display:block}.kv text{fill:var(--ink2);font-size:11px}
+.kv .tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--grid);border-radius:6px;padding:6px 8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:none;white-space:nowrap;z-index:2}
+.kv .sec{margin-top:22px}
+ul{color:var(--ink2);padding-left:20px}li{margin-bottom:6px}
+a{color:var(--long)}
+footer{margin-top:32px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<h1>Metronet Downtime Report</h1>
+<p class="lede">How often our home internet connection has dropped, measured once a minute from Jul 31, 2026 to Oct 13, 2026 at 3:29 PM (Central time).</p>
+<div class="stats">
+ <div class="stat"><b>85</b><span>outages</span></div>
+ <div class="stat"><b>13h 34m</b><span>total time down</span></div>
+ <div class="stat"><b>1h 28m</b><span>longest outage (Sep 1)</span></div>
+ <div class="stat"><b>99.24%</b><span>uptime</span></div>
+</div>
+
+<h2>Summary by month</h2>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Month</th><th scope="col">1 min or less</th><th scope="col">Longer than 1 min</th><th scope="col">Total</th><th scope="col">Average outage</th><th scope="col">Reliability</th></tr></thead>
+<tbody>
+<tr><td scope="row">Jul (31)</td><td>0 (0 min)</td><td>0 (0 min)</td><td>0 (0 min)</td><td>&ndash;</td><td>100.00%</td></tr>
+<tr><td scope="row">Aug</td><td>2 (2 min)</td><td>30 (5h 40m)</td><td>32 (5h 42m)</td><td>10.7 min</td><td>99.23%</td></tr>
+<tr><td scope="row">Sep</td><td>9 (9 min)</td><td>16 (3h 25m)</td><td>25 (3h 34m)</td><td>8.6 min</td><td>99.50%</td></tr>
+<tr><td scope="row">Oct (1–13)</td><td>4 (4 min)</td><td>24 (4h 14m)</td><td>28 (4h 18m)</td><td>9.2 min</td><td>98.58%</td></tr>
+<tr class="total"><th scope="row">Total</th><td>15 (15 min)</td><td>70 (13h 19m)</td><td>85 (13h 34m)</td><td>9.6 min</td><td>99.24%</td></tr>
+</tbody></table></div>
+<p style="margin-top:8px;font-size:13px">Each cell shows the number of outages and the total time down. Average outage is total time divided by the number of outages. Reliability is the share of the month the connection was up while it was being monitored.</p>
+
+<h2>Charts</h2>
+<div class="kv" id="kv">
+ <h3>Internet downtime per day</h3>
+ <p>Minutes down each day. Each section is one outage, stacked in the order they happened. The line is the trailing 7-day average.</p>
+ <div class="lg"><span><i style="background:var(--long)"></i>Longer than 1 min</span><span><i style="background:var(--short)"></i>1 min or less</span><span><i style="background:var(--ink);height:2px;vertical-align:3px"></i>7-day average</span></div>
+ <svg id="c1" viewBox="0 0 720 240" role="img" aria-label="Daily downtime minutes"></svg>
+ <div class="sec"><h3>Outages per day</h3>
+ <p>Number of separate outages each day, with the trailing 7-day average.</p>
+ <div class="lg"><span><i style="background:var(--long)"></i>Longer than 1 min</span><span><i style="background:var(--short)"></i>1 min or less</span><span><i style="background:var(--ink);height:2px;vertical-align:3px"></i>7-day average</span></div>
+ <svg id="c3" viewBox="0 0 720 200" role="img" aria-label="Outages per day"></svg></div>
+ <div class="sec"><h3>When outages start</h3>
+ <p>Number of outages by the hour of day they began.</p>
+ <div class="lg"><span><i style="background:var(--long)"></i>Longer than 1 min</span><span><i style="background:var(--short)"></i>1 min or less</span></div>
+ <svg id="c2" viewBox="0 0 720 220" role="img" aria-label="Outages by hour of day"></svg></div>
+ <div class="tip" id="tip"></div>
+</div>
+
+<h2>How this is measured</h2>
+<ul>
+ <li>An <a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a> monitor on a Raspberry Pi pings a public address (8.8.4.4) once a minute. A failed ping marks the internet as down until the next successful one, so each start and end time can be off by up to about a minute.</li>
+ <li>A second monitor pings our own router. Outages where our router was also down within 3 minutes are left out, since those point to a problem inside the house rather than with Metronet. 31 outages were left out this way.</li>
+ <li>Outages of 1 minute or less are a single failed check and could be a dropped ping rather than a real outage, so they are shown separately.</li>
+</ul>
+<p><a href="internet-outages.csv">Download the full outage list (CSV)</a></p>
+<footer>Last updated Oct 13, 2026 at 3:29 PM. Source code: <a href="https://github.com/npherson/MetronetDowntime">github.com/npherson/MetronetDowntime</a></footer>
+</main>
+<script>
+(function(){
+const D={"days": [["2026-07-31", 0, 0, 0, 0, []], ["2026-08-01", 0, 0, 0, 0, []], ["2026-08-02", 0, 0, 0, 0, []], ["2026-08-03", 0, 0, 0, 0, []], ["2026-08-04", 0, 3.0, 0, 1, [["23:38", 3.0, 0]]], ["2026-08-05", 1.0, 10.0, 1, 2, [["00:01", 1.0, 1], ["00:03", 2.0, 0], ["07:40", 8.0, 0]]], ["2026-08-06", 0, 102.0, 0, 4, [["01:00", 19.0, 0], ["02:08", 5.0, 0], ["07:57", 6.0, 0], ["13:53", 72.0, 0]]], ["2026-08-07", 0, 0, 0, 0, []], ["2026-08-08", 0, 28.0, 0, 3, [["03:43", 10.0, 0], ["04:09", 11.0, 0], ["07:42", 7.0, 0]]], ["2026-08-09", 0, 0, 0, 0, []], ["2026-08-10", 0, 0, 0, 0, []], ["2026-08-11", 0, 0, 0, 0, []], ["2026-08-12", 0, 0, 0, 0, []], ["2026-08-13", 0, 0, 0, 0, []], ["2026-08-14", 0, 2.0, 0, 1, [["21:41", 2.0, 0]]], ["2026-08-15", 0, 2.0, 0, 1, [["04:46", 2.0, 0]]], ["2026-08-16", 0, 0, 0, 0, []], ["2026-08-17", 0, 36.0, 0, 4, [["04:18", 14.0, 0], ["04:36", 11.0, 0], ["04:56", 5.0, 0], ["07:54", 6.0, 0]]], ["2026-08-18", 0, 0, 0, 0, []], ["2026-08-19", 0, 47.0, 0, 5, [["01:03", 28.0, 0], ["01:36", 6.0, 0], ["08:40", 3.0, 0], ["22:46", 5.0, 0], ["22:54", 5.0, 0]]], ["2026-08-20", 0, 5.0, 0, 1, [["07:58", 5.0, 0]]], ["2026-08-21", 0, 0, 0, 0, []], ["2026-08-22", 0, 11.0, 0, 1, [["23:27", 11.0, 0]]], ["2026-08-23", 0, 6.0, 0, 1, [["08:40", 6.0, 0]]], ["2026-08-24", 0, 6.0, 0, 1, [["00:20", 6.0, 0]]], ["2026-08-25", 1.0, 0, 1, 0, [["23:57", 1.0, 1]]], ["2026-08-26", 0, 0, 0, 0, []], ["2026-08-27", 0, 82.0, 0, 5, [["04:00", 48.0, 0], ["05:17", 8.0, 0], ["07:40", 13.0, 0], ["23:25", 7.0, 0], ["23:37", 6.0, 0]]], ["2026-08-28", 0, 0, 0, 0, []], ["2026-08-29", 0, 0, 0, 0, []], ["2026-08-30", 0, 0, 0, 0, []], ["2026-08-31", 0, 0, 0, 0, []], ["2026-09-01", 0, 99.0, 0, 2, [["03:07", 11.0, 0], ["05:38", 88.0, 0]]], ["2026-09-02", 0, 0, 0, 0, []], ["2026-09-03", 0, 2.0, 0, 1, [["00:03", 2.0, 0]]], ["2026-09-04", 0, 0, 0, 0, []], ["2026-09-05", 0, 0, 0, 0, []], ["2026-09-06", 0, 0, 0, 0, []], ["2026-09-07", 0, 0, 0, 0, []], ["2026-09-08", 0, 0, 0, 0, []], ["2026-09-09", 0, 25.0, 0, 2, [["06:14", 19.0, 0], ["23:51", 6.0, 0]]], ["2026-09-10", 0, 5.0, 0, 1, [["08:43", 5.0, 0]]], ["2026-09-11", 0, 0, 0, 0, []], ["2026-09-12", 2.0, 18.0, 2, 1, [["21:05", 1.0, 1], ["21:20", 1.0, 1], ["22:05", 18.0, 0]]], ["2026-09-13", 2.0, 8.0, 2, 1, [["18:38", 1.0, 1], ["18:53", 1.0, 1], ["21:24", 8.0, 0]]], ["2026-09-14", 0, 7.0, 0, 1, [["08:48", 7.0, 0]]], ["2026-09-15", 0, 13.0, 0, 2, [["22:51", 7.0, 0], ["23:01", 6.0, 0]]], ["2026-09-16", 0, 5.0, 0, 1, [["08:50", 5.0, 0]]], ["2026-09-17", 0, 0, 0, 0, []], ["2026-09-18", 0, 0, 0, 0, []], ["2026-09-19", 0, 0, 0, 0, []], ["2026-09-20", 0, 0, 0, 0, []], ["2026-09-21", 0, 0, 0, 0, []], ["2026-09-22", 0, 12.0, 0, 2, [["23:44", 7.0, 0], ["23:53", 5.0, 0]]], ["2026-09-23", 0, 9.0, 0, 1, [["08:18", 9.0, 0]]], ["2026-09-24", 4.0, 2.0, 4, 1, [["19:51", 1.0, 1], ["20:16", 1.0, 1], ["20:52", 1.0, 1], ["20:59", 2.0, 0], ["21:05", 1.0, 1]]], ["2026-09-25", 0, 0, 0, 0, []], ["2026-09-26", 0, 0, 0, 0, []], ["2026-09-27", 1.0, 0, 1, 0, [["20:20", 1.0, 1]]], ["2026-09-28", 0, 0, 0, 0, []], ["2026-09-29", 0, 0, 0, 0, []], ["2026-09-30", 0, 0, 0, 0, []], ["2026-10-01", 1.0, 20.0, 1, 4, [["20:23", 1.0, 1], ["21:03", 2.0, 0], ["21:32", 2.0, 0], ["23:11", 8.0, 0], ["23:25", 8.0, 0]]], ["2026-10-02", 0, 47.0, 0, 2, [["09:37", 12.0, 0], ["22:08", 35.0, 0]]], ["2026-10-03", 1.0, 0, 1, 0, [["16:12", 1.0, 1]]], ["2026-10-04", 0, 52.0, 0, 5, [["04:31", 28.0, 0], ["05:01", 5.0, 0], ["08:57", 9.0, 0], ["21:49", 4.0, 0], ["21:55", 6.0, 0]]], ["2026-10-05", 0, 11.0, 0, 1, [["09:32", 11.0, 0]]], ["2026-10-06", 0, 0, 0, 0, []], ["2026-10-07", 0, 57.0, 0, 5, [["03:57", 28.0, 0], ["04:27", 7.0, 0], ["09:04", 5.0, 0], ["23:06", 10.0, 0], ["23:21", 7.0, 0]]], ["2026-10-08", 0, 6.0, 0, 1, [["09:36", 6.0, 0]]], ["2026-10-09", 0, 33.0, 0, 3, [["03:37", 22.0, 0], ["04:05", 5.0, 0], ["08:57", 6.0, 0]]], ["2026-10-10", 0, 0, 0, 0, []], ["2026-10-11", 1.0, 0, 1, 0, [["21:07", 1.0, 1]]], ["2026-10-12", 1.0, 9.0, 1, 2, [["21:15", 1.0, 1], ["22:53", 3.0, 0], ["22:57", 6.0, 0]]], ["2026-10-13", 0, 19.0, 0, 1, [["10:21", 19.0, 0]]]], "hours": [[1, 3], [0, 3], [0, 1], [0, 4], [0, 9], [0, 3], [0, 1], [0, 6], [0, 8], [0, 4], [0, 1], [0, 0], [0, 0], [0, 1], [0, 0], [0, 0], [1, 0], [0, 0], [2, 0], [1, 0], [4, 1], [5, 6], [0, 7], [1, 12]]},NS="http://www.w3.org/2000/svg",root=document.getElementById("kv"),tip=document.getElementById("tip");
+function el(p,t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+function show(ev,h){tip.innerHTML=h;tip.style.display="block";const r=root.getBoundingClientRect();let x=ev.clientX-r.left+12;if(x>r.width-190)x=Math.max(4,x-210);tip.style.left=x+"px";tip.style.top=(ev.clientY-r.top+12)+"px"}
+function hide(){tip.style.display="none"}
+function hover(node,f){node.addEventListener("mousemove",e=>show(e,f()));node.addEventListener("click",e=>{e.stopPropagation();show(e,f())});node.addEventListener("mouseleave",hide)}
+document.addEventListener("click",hide);
+function bar(p,x,y,w,h,fill,top){if(h<=0)return;const r=Math.min(3,w/2,h);
+ const d=top?`M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`:`M${x},${y}h${w}v${h}h${-w}Z`;
+ el(p,"path",{d,fill})}
+function fmt(m){m=Math.round(m);return m>=60?Math.floor(m/60)+"h "+(m%60)+"m":m+" min"}
+// Round an axis maximum up to a multiple of step, and list its ticks.
+function axis(v,step){const max=Math.max(step,Math.ceil(v/step)*step),t=[];for(let i=0;i<=max;i+=step)t.push(i);return [max,t]}
+function chart(svg,rows,[maxV,ticks],label,tipf,line){
+ const L=40,R=8,T=8,B=28,W=720-L-R,H=+svg.getAttribute("viewBox").split(" ")[3]-T-B,n=rows.length,bw=W/n,g=Math.min(2,bw*.25);
+ ticks.forEach(t=>{const y=T+H-t/maxV*H;el(svg,"line",{x1:L,x2:L+W,y1:y,y2:y,stroke:"var(--grid)"});el(svg,"text",{x:L-6,y:y+4,"text-anchor":"end"}).textContent=t});
+ rows.forEach((r,i)=>{const x=L+i*bw+g/2,w=bw-g,hl=r.long/maxV*H,hs=r.short/maxV*H;
+  const lb=label(r,i);if(lb)el(svg,"text",{x:x+w/2,y:T+H+16,"text-anchor":"middle"}).textContent=lb;
+  hover(el(svg,"rect",{x:L+i*bw,y:T,width:bw,height:H,fill:"transparent"}),()=>tipf(r));
+  if(r.segs){
+   // One section per outage, stacked bottom-up in the order they happened.
+   let y=T+H;
+   r.segs.forEach((sg,j)=>{const full=sg[1]/maxV*H,h=Math.max(1,full-(j?2:0));y-=j?2:0;y-=h;
+    bar(svg,x,y,w,h,sg[2]?"var(--short)":"var(--long)",j==r.segs.length-1);
+    hover(el(svg,"rect",{x:L+i*bw,y:y,width:bw,height:h+2,fill:"transparent"}),()=>tipf(r,sg))});
+   return}
+  bar(svg,x,T+H-hl,w,hl,"var(--long)",hs<=0);
+  if(hs>0)bar(svg,x,T+H-hl-hs-(hl>0?2:0),w,hs,"var(--short)",true)});
+ el(svg,"line",{x1:L,x2:L+W,y1:T+H,y2:T+H,stroke:"var(--muted)"});
+ if(line){const pts=line.map((v,i)=>v==null?null:`${L+i*bw+bw/2},${T+H-v/maxV*H}`).filter(Boolean).join(" ");
+  el(svg,"polyline",{points:pts,fill:"none",stroke:"var(--panel)","stroke-width":5,"stroke-linejoin":"round","pointer-events":"none"});
+  el(svg,"polyline",{points:pts,fill:"none",stroke:"var(--ink)","stroke-width":2,"stroke-linejoin":"round","pointer-events":"none"})}
+}
+const mon=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const days=D.days.map(d=>({date:d[0],short:d[1],long:d[2],ns:d[3],nl:d[4],inc:d[5]}));
+const clock=t=>{const h=+t.slice(0,2);return (h%12||12)+":"+t.slice(3)+(h<12?" AM":" PM")};
+const dayLabel=r=>{const dd=+r.date.slice(8);return (dd==1||dd==15)?mon[+r.date.slice(5,7)-1]+" "+dd:""};
+const head=r=>{const [y,m,d]=r.date.split("-");return `<b>${mon[+m-1]} ${+d}</b><br>`};
+// Trailing 7-day averages; they start once 7 full days exist.
+const trail=f=>days.map((r,i)=>i<6?null:days.slice(i-6,i+1).reduce((a,d)=>a+f(d),0)/7);
+const avgMin=trail(d=>d.short+d.long),avgCnt=trail(d=>d.ns+d.nl);
+days.forEach((r,i)=>{r.avgMin=avgMin[i];r.avg=avgCnt[i]});
+chart(document.getElementById("c1"),days.map(r=>({...r,segs:r.inc})),axis(Math.max(...days.map(d=>d.short+d.long+2*d.inc.length)),30),dayLabel,
+ (r,sg)=>{const t=r.ns+r.nl;return head(r)+`${sg?`Outage at ${clock(sg[0])}: ${fmt(sg[1])}<br>`:""}${t?`Day total: ${fmt(r.short+r.long)} in ${t} outage${t>1?"s":""}`:"No outages"}${r.avgMin!=null?`<br>7-day average: ${fmt(r.avgMin)} a day`:""}`},avgMin);
+chart(document.getElementById("c3"),days.map(r=>({...r,short:r.ns,long:r.nl})),axis(Math.max(...days.map(d=>d.ns+d.nl)),2),dayLabel,
+ r=>{const t=r.ns+r.nl;return head(r)+`${t?`${t} outage${t>1?"s":""}<br>${r.nl} longer than 1 min, ${r.ns} of 1 min or less`:"No outages"}${r.avg!=null?`<br>7-day average: ${r.avg.toFixed(1)} a day`:""}`},avgCnt);
+const hrs=D.hours.map((h,i)=>({hour:i,short:h[0],long:h[1]}));
+const hl=h=>(h%12||12)+(h<12?"a":"p");
+chart(document.getElementById("c2"),hrs,axis(Math.max(...hrs.map(h=>h.short+h.long)),4),r=>r.hour%3==0?hl(r.hour):"",
+ r=>`<b>${hl(r.hour)}m to ${hl((r.hour+1)%24)}m</b><br>${r.long+r.short} outages<br>${r.long} longer than 1 min, ${r.short} of 1 min or less`);
+})();
+</script>
+</body>
+</html>
