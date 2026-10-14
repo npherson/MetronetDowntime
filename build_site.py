@@ -21,7 +21,7 @@ for s in R["summary"]:
     avg = f'{s["avg"]} min' if s["avg"] is not None else "&ndash;"
     rows.append(
         f"<tr{cls}><{tag} scope=\"row\">{html.escape(s['label'])}</{tag}>"
-        f"<td>{cell(s['short'])}</td><td>{cell(s['long'])}</td><td>{cell(s['total'])}</td>"
+        f"<td>{cell(s['total'])}</td><td>{cell(s['short'])}</td><td>{cell(s['long'])}</td>"
         f"<td>{avg}</td><td>{s['reliability']:.2f}%</td></tr>")
 total = R["summary"][-1]
 
@@ -77,7 +77,7 @@ footer{margin-top:32px;font-size:13px;color:var(--muted)}
 
 <h2>Summary by month</h2>
 <div class="tablewrap"><table>
-<thead><tr><th scope="col">Month</th><th scope="col">1 min or less</th><th scope="col">Longer than 1 min</th><th scope="col">Total</th><th scope="col">Average outage</th><th scope="col">Reliability</th></tr></thead>
+<thead><tr><th scope="col">Month</th><th scope="col">Total</th><th scope="col">1 min or less</th><th scope="col">Longer than 1 min</th><th scope="col">Average outage</th><th scope="col">Reliability</th></tr></thead>
 <tbody>
 __ROWS__
 </tbody></table></div>
