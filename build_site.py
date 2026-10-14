@@ -103,7 +103,7 @@ __ROWS__
 <h2>How this is measured</h2>
 <ul>
  <li>An <a href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a> monitor on a Raspberry Pi pings a public address (8.8.4.4) once a minute. A failed ping marks the internet as down until the next successful one, so each start and end time can be off by up to about a minute.</li>
- <li>A second monitor pings our own router. Outages where our router was also down within 3 minutes are left out, since those point to a problem inside the house rather than with Metronet. __EXCLUDED__ outages were left out this way.</li>
+ <li>A second monitor pings our own router. Outages where our router was also down within 3 minutes are left out, since those point to a problem inside the house rather than with Metronet.</li>
  <li>Outages of 1 minute or less are a single failed check and could be a dropped ping rather than a real outage, so they are shown separately.</li>
 </ul>
 <p><a href="internet-outages.csv">Download the full outage list (CSV)</a></p>
@@ -171,7 +171,7 @@ subs = {
     "__COUNT__": str(total["total"][0]), "__TOTAL__": dur(total["total"][1]),
     "__LONGEST__": R["longest"]["duration"].replace("0h ", ""),
     "__LONGEST_WHEN__": (lambda d: f"{d:%b} {d.day}")(datetime.fromisoformat(R["longest"]["start"])), "__REL__": f"{total['reliability']:.2f}",
-    "__EXCLUDED__": str(R["excluded"]), "__ROWS__": "\n".join(rows),
+    "__ROWS__": "\n".join(rows),
     "__DATA__": json.dumps({"days": R["days"], "hours": R["hours"]}),
 }
 for k, v in subs.items():
