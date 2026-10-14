@@ -84,3 +84,6 @@ n,start_local,end_local,duration,duration_in_mins,length_group,start_utc,error
 83,2026-10-12 22:53:44,2026-10-12 22:56:44,0h 3m,3,over 1 min,2026-10-13 03:53:44,From 206.196.34.238 icmp_seq=5 Destination Host Unreachable
 84,2026-10-12 22:57:44,2026-10-12 23:03:44,0h 6m,6,over 1 min,2026-10-13 03:57:44,"10 packets transmitted, 0 received, 100% packet loss, time 9209ms"
 85,2026-10-13 10:21:45,2026-10-13 10:40:45,0h 19m,19,over 1 min,2026-10-13 15:21:45,From 206.196.34.238 icmp_seq=3 Destination Host Unreachable
+86,2026-10-13 18:58:45,2026-10-13 19:27:45,0h 29m,29,over 1 min,2026-10-13 23:58:45,"10 packets transmitted, 0 received, 100% packet loss, time 9197ms"
+87,2026-10-13 19:35:45,2026-10-13 19:42:45,0h 7m,7,over 1 min,2026-10-14 00:35:45,From 206.196.34.238 icmp_seq=5 Destination Host Unreachable
+88,2026-10-14 10:41:45,2026-10-14 11:02:45,0h 21m,21,over 1 min,2026-10-14 15:41:45,"10 packets transmitted, 0 received, 100% packet loss, time 9221ms"
